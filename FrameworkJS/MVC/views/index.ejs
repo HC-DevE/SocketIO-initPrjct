@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Exemple MVC</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        h2 {
+            font-size: 1.5em;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 0.5em 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+        input {
+            display: block;
+            margin-bottom: 1em;
+        }
+        button {
+            display: block;
+            margin-bottom: 1em;
+        }
+    </style>
+</head>
+<body>
+<h1>Ajouter un utilisateur</h1>
+<form action="/add-user" method="post">
+    <label for="username">Nom d'utilisateur :</label>
+    <input type="text" id="username" name="username" required>
+    <button type="submit">Ajouter</button>
+</form>
+
+<h2>Liste des utilisateurs</h2>
+<ul>
+    <% users.forEach(user => { %>
+        <li><%= user.username %></li>
+    <% }); %>
+</ul>
+</body>
+</html>
